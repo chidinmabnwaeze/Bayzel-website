@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+* {
+  font-family: nunito;
+}
+.nav-list {
+  margin: 1rem;
+}
+.slideHidden {
+  display: none;
+}
+.prev, .next{
+  height: 1.2rem;
+  color: white;
+
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
