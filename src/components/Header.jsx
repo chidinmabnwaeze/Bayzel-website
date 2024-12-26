@@ -3,18 +3,21 @@ import logo from "../assets/logo/logo bayzel.jpg";
 
 const Header = () => {
   return (
-    <header className="header flex p-4 fixed justify-between z-10" id="header">
-      <div className="navbar-brand">
-        <a className="bayzel" href="">
-          <img className="logo" src={logo} alt="logo" />
+    <header
+      className="header flex p-4 w-full fixed justify-between items-center z-10 bg-white"
+      id="header"
+    >
+      <div className="navbar-brand flex">
+        <a className="bayzel flex items-center text-base text-blue-700" href="">
+          <img className="logo w-40 mr-2" src={logo} alt="logo" />
           BAYZEL INTEGRATED SERVICES LIMITED
         </a>
       </div>
-      <nav className="navbar">
+      <nav className="navbar flex ">
         <div className="nav-menu">
-          <ul className="nav-lists">
+          <ul className="nav-lists flex">
             <li className="nav-list">
-              <a className="nav-link text-2xl text-red-700" href="#home">
+              <a className="nav-link" href="#home">
                 Home
               </a>
             </li>
