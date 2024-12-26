@@ -11,10 +11,23 @@
 .slideHidden {
   display: none;
 }
-.prev, .next{
+.prev,
+.next {
   height: 1.2rem;
   color: white;
-
+}
+.slider-img {
+  max-height: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.service-card {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 32px 0px;
+}
+.service-card:hover {
+  background-color: blue;
+  transform: translateY();
+  transition: background-color 0.7s ease-in;
 }
 
 /* :root {
