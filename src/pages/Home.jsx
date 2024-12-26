@@ -89,7 +89,7 @@ const Home = () => {
                   alt="slide"
                 />
               </div>
-              <div className="content absolute top-60 bottom-0 m-6">
+              <div className="content absolute top-60 bottom-0 m-10">
                 <div className="heading-text mb-5">
                   <h1 className="title text-white text-5xl mb-3 font-semibold">
                     {slide.title}
@@ -103,13 +103,13 @@ const Home = () => {
             </div>
           ))}
           <button
-            className="prev absolute top-80 bottom-0 left-0"
+            className="prev absolute top-80 bottom-0 left-0 m-3"
             onClick={prevSlide}
           >
           &#10094;
           </button>
           <button
-            className="next absolute top-80 bottom-0 right-0 w-8"
+            className="next absolute top-80 bottom-0 right-0 w-8 m-3"
             onClick={nextSlide}
           >
             &#10095;
