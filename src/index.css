@@ -16,10 +16,8 @@
   height: 1.2rem;
   color: white;
 }
-.slider-img {
-  max-height: 50%;
-  object-fit: cover;
-  object-position: center;
+.slider{
+  height: 600px; /* Fixed height for the slider */
 }
 .service-card {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 32px 0px;

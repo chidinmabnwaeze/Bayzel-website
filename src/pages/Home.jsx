@@ -75,7 +75,7 @@ const Home = () => {
       <Header />
       <section className="body">
         <section className="slider-section max-h-full">
-          <div className="slider">
+          <div className="slider overflow-hidden w-full">
             {slides.map((slide, index) => (
               <div
                 className={slideIndex === index ? "slides" : "slideHidden"}
@@ -83,7 +83,7 @@ const Home = () => {
               >
                 <div className="overlay bg-black opacity-100">
                   <img
-                    className="slider-img opacity-50 "
+                    className="slider-img opacity-50 w-full h-full object-cover object-center "
                     src={slide.img}
                     alt="slide"
                   />
