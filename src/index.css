@@ -18,6 +18,12 @@
 }
 .slider{
   height: 600px; /* Fixed height for the slider */
+  transition:all 1s ease-out ;
+}
+.slider-img{
+  transform: translate();
+  transition:all 1s ease-out ;
+  
 }
 .service-card {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 32px 0px;

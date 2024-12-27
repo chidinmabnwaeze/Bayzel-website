@@ -4,6 +4,8 @@ import slide1 from "../assets/images/muhammad-sosiawan-unsplash.jpg";
 import slide2 from "../assets/images/mario-heller-unsplash.jpg";
 import slide3 from "../assets/images/marta-ortigosa-unsplash (1).jpg";
 import { serviceCards } from "../data/service-card";
+import secondimg from "../assets/images/erwan-hesry-1q75BReKpms-unsplash.jpg"
+import { works } from "../data/work";
 
 const Home = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -113,6 +115,13 @@ const Home = () => {
             >
               &#10095;
             </button>
+            {/* slide indicator */}
+            {slides.map(( index)=>(
+              <button className="absolute flex items-center justify-center bottom-2 " key={index}>
+                &bull;
+              </button>
+            ))
+            }
           </div>
         </section>
 
@@ -141,12 +150,12 @@ const Home = () => {
         </section>
 
         {/* 3rd section */}
-        <section className="about-info flex bg-blue-700">
+        <section className="about-info flex bg-blue-700 p-8 w-full">
           <div>
             <img
-              className="secondimg"
-              src="images/erwan-hesry-1q75BReKpms-unsplash.jpg"
-              alt=""
+              className="secondimg w-4/5 object-cover rounded-2xl"
+              src={secondimg}
+              alt="image"
             />
           </div>
           <div className="why-us text-white w-full">
@@ -155,28 +164,32 @@ const Home = () => {
                 Why Us?
               </h2>
               <p className="text-2xl">
-                We've consulted for <span>International Organizations</span> and
-                supervised over <span>300 farmers </span>in Nigeria
+                We've consulted for <span className="text-2xl">International Organizations</span> and
+                supervised over <span className="text-2xl">300 farmers </span>in Nigeria
               </p>
             </div>
-            <span className="summary-text">
+            <span className="summary-text mb-7 text-sm">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Voluptates repellat quidem cupiditate dolor, explicabo, inventore
               similique quia aut nihil quos tempora ad reiciendis voluptatum
               harum sed consequuntur maiores expedita? Minus?
             </span>
+
+            {/* 4th section */}
             <div className="ourProjects mt-6">
-              <div className="project flex">
-                <img src="icons/healthicons_agriculture-outline.svg" alt="" />
-                <div className="project-info ml-32">
-                  <h3 className="text-xl">Gems4</h3>
+              {works.map((work, index)=>(
+                
+              <div className="project flex items-center justify-center mb-5" key={index}>
+                <img src={work.img1} alt="" />
+                <div className="project-info ml-3">
+                  <h3 className="text-xl">{work.title}</h3>
                   <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Magnam quas ducimus animi tempora iusto! Officia{" "}
+                   {work.text}
                   </p>
                 </div>
               </div>
-              <div className="project">
+              ))}
+              {/* <div className="project">
                 <img src="icons/healthicons_agriculture-worker.svg" alt="" />
                 <div className="project-info">
                   <h3 className="text-xl">Gems4</h3>
@@ -198,11 +211,11 @@ const Home = () => {
                     Magnam quas ducimus animi tempora iusto! Officia{" "}
                   </p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
-        <section class="our-work m-3">
+        <section class="our-work m-3 flex justify-center flex-col relative">
           <div class="work-title">
             <h1 class="text-3xl font-semibold text-blue-700 mt-6">
               Our Projects
@@ -212,14 +225,14 @@ const Home = () => {
           <div class="slide-indicator flex justify-between">
             <a href="">
               <img
-                class="left-arrow"
+                class="left-arrow absolute top-2/4 bottom-0 left-0"
                 src="icons/material-symbols-light_arrow-back-ios.svg"
                 alt="left-arrow"
               />
             </a>
             <a href="">
               <img
-                class="right-arrow"
+                class="right-arrow absolute top-2/4 bottom-0 right-0"
                 src="icons/material-symbols-light_arrow-back-ios-1.svg"
                 alt="right=arrow"
               />
@@ -227,7 +240,7 @@ const Home = () => {
           </div>
           {/* Each slide  */}
           <section class="project-slider flex">
-            <div class="project-slides">
+            <div class="project-slides w-500 m-2 bg-white p-2 rounded-xl relative">
               <img
                 class="project-img"
                 src="images/arjun-mj-792-GkRUtes-unsplash.jpg"
@@ -262,14 +275,14 @@ const Home = () => {
             </div>
           </section>
         </section>
-        <section class="testimonal-section ">
+        <section class="testimonal-section flex flex-col ">
           <div class="testimonal-heading">
             <h1 class="text-3xl font-semibold text-blue-700 mt-6">
               Testimonals
             </h1>
           </div>
-          <section class="testimonals">
-            <div class="testimonal-text">
+          <section class="testimonals flex items-center justify-center px-0 py-4">
+            <div class="testimonal-text w-2/4">
               <h1 class=" font-medium mb-3">Our Testimonals</h1>
               <p>
                 {" "}
@@ -280,11 +293,11 @@ const Home = () => {
                 voluptatibus aliquam dolorum aperiam, molestiae id in. Quam.
               </p>
             </div>
-            <section class="testimonal-cards">
-              <div class="testimony">
+            <section class="testimonal-cards flex p-7 justify-center items-center w-3/5">
+              <div class="testimony flex flex-col justify-center items-center">
                 <div class="client-info flex justify-center align-center">
                   <img
-                    class="client-pic "
+                    class="client-pic w-full rounded-full "
                     src="images/aiony-haust-3TLl_97HNJo-unsplash.jpg"
                     alt="client-picture"
                   />
@@ -307,8 +320,8 @@ const Home = () => {
             </section>
           </section>
         </section>
-        <footer>
-          <section class="footer-info">
+        <footer className="bg-blue-700 px-4 py-12 text-white">
+          <section class="footer-info flex justify-around items-center">
             <section class="left">
               <section class="one">
                 <h1>Bayzel Integrated Services</h1>
@@ -323,7 +336,7 @@ const Home = () => {
                 </div>
               </section>
             </section>
-            <section class="right">
+            <section class="right grid grid-cols-3 gap-2">
               <div>
                 <h3>Useful Links</h3>
                 <ul>
@@ -381,7 +394,7 @@ const Home = () => {
               </div>
             </section>
           </section>
-          <div class="copy">
+          <div class="copy flex flex-col justify-center items-center">
             <p>&copy; Copyright Bayzel Integrated Services @2025</p>
             <p>All Rights Reserved</p>
           </div>
