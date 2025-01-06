@@ -5,6 +5,12 @@
 * {
   font-family: nunito;
 }
+a {
+  font-weight: 600;
+}
+a:hover {
+  color: #1d4ed8;
+}
 .nav-list {
   margin: 1rem;
 }
@@ -52,6 +58,47 @@
   border-radius: 50px;
   padding: 4px;
 }
+.testimonal-card {
+  height: 320px;
+  box-shadow: 0px 5px 8px rgb(0, 0, 0, 0.24);
+}
+.client-pic {
+  border-radius: 50%;
+}
+.testimony {
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out;
+}
+.slideVisible {
+  opacity: 1;
+  transform: translateX(0);
+  width: 100%;
+}
+.slideExit {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.slideHidden {
+  display: none;
+  opacity: 0;
+  transform: translateX(100%);
+}
+.indicator-inactive {
+  color: gray;
+}
+.indicator {
+  color: #1d4ed8;
+}
+.CTA:hover {
+  opacity: 0.5;
+  transition: all 0.8ms ease-out;
+}
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -67,14 +114,6 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
 body {
   margin: 0;

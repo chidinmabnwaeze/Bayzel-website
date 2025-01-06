@@ -7,6 +7,7 @@ import { serviceCards } from "../data/service-card";
 import secondimg from "../assets/images/erwan-hesry-1q75BReKpms-unsplash.jpg";
 import { works } from "../data/work";
 import { projectCards } from "../data/project-cards";
+import Testimonals from "../components/Testimonals";
 
 const Home = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -146,6 +147,7 @@ const Home = () => {
               <a
                 className="service-card w-4/5 p-6 items-center flex flex-col "
                 href=""
+                key={index}
               >
                 <img src={cards.img} alt="" />
                 <div className="card-text">
@@ -248,51 +250,7 @@ const Home = () => {
           </div>
         </section>
 
-        <section class="testimonal-section flex flex-col ">
-          <div class="testimonal-heading">
-            <h1 class="text-3xl font-semibold text-blue-700 mt-6">
-              Testimonals
-            </h1>
-          </div>
-          <section class="testimonals flex items-center justify-center px-0 py-4">
-            <div class="testimonal-text w-2/4">
-              <h1 class=" font-medium mb-3">Our Testimonals</h1>
-              <p>
-                {" "}
-                We have had lot of testimonals from our clients Lorem ipsum
-                dolor sit amet, consectetur adipisicing elit. Rem voluptatem
-                consequuntur voluptas exercitationem quae aut temporibus
-                quibusdam incidunt placeat accusamus, eligendi repellendus
-                voluptatibus aliquam dolorum aperiam, molestiae id in. Quam.
-              </p>
-            </div>
-            <section class="testimonal-cards flex p-7 justify-center items-center w-3/5">
-              <div class="testimony flex flex-col justify-center items-center">
-                <div class="client-info flex justify-center align-center">
-                  <img
-                    class="client-pic w-full rounded-full "
-                    src="images/aiony-haust-3TLl_97HNJo-unsplash.jpg"
-                    alt="client-picture"
-                  />
-                  <h3 class="text-blue-700">Sarah Jones</h3>
-                  <p>M&E Manager</p>
-                  {/* <span class="ratings"><img src="" alt=""></span>*/}
-                </div>
-                <div class="review">
-                  <span>
-                    <img src="/icons/raphael_quote.svg" alt="quotes" />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                    eaque voluptates saepe maiores sit, labore autem tempore ab!
-                    Saepe deleniti eveniet consectetur earum dolores officia
-                    iste reprehenderit maxime autem cupiditate!
-                    <img src="icons/entypo_quote.svg" alt="quotes" />
-                  </span>
-                </div>
-              </div>
-              <div class="scroll-indicator rounded-full">.</div>
-            </section>
-          </section>
-        </section>
+        <Testimonals />
         <footer className="bg-blue-700 px-4 py-12 text-white">
           <section class="footer-info flex justify-around items-center">
             <section class="left">

@@ -6,13 +6,13 @@ import twitter from "../assets/logo/twiitter x.jpeg";
 
 const Footer = () => {
   return (
-    <footer>
-      <section className="footer-info">
-        <section className="left">
-          <section className="one">
+    <footer className="bg-blue-700 px-4 py-12 text-white">
+      <section class="footer-info flex justify-around items-center">
+        <section class="left">
+          <section class="one">
             <h1>Bayzel Integrated Services</h1>
             <address>Bama road, Kubwa,Abuja</address>
-            <div className="contact-details">
+            <div class="contact-details">
               <p>
                 <span>Phone:</span>08022409706
               </p>
@@ -22,21 +22,21 @@ const Footer = () => {
             </div>
           </section>
         </section>
-        <section className="right">
+        <section class="right grid grid-cols-3 gap-2">
           <div>
             <h3>Useful Links</h3>
             <ul>
               <li>
-                <a href="">Home</a>
+                <a href="/home">Home</a>
               </li>
               <li>
-                <a href="">About</a>
+                <a href="/about">About</a>
               </li>
               <li>
-                <a href="">Services</a>
+                <a href="/services">Services</a>
               </li>
               <li>
-                <a href="">Terms</a>
+                <a href="/terms">Terms</a>
               </li>
             </ul>
           </div>
@@ -60,24 +60,24 @@ const Footer = () => {
           <div>
             <h5>Follow Us</h5>
             <p>Follow us on all our socials</p>
-            <div className="social-links">
-              <a className="sm-link" href="#">
+            <div class="social-links">
+              <a class="sm-link" href="#">
                 <img src={facebook} alt="facebook" />
               </a>
-              <a className="sm-link" href="#">
-                <img src={insta} alt="insta" />
+              <a class="sm-link" href="#">
+                <img src="logo/instagram-filled.png" alt="insta" />
               </a>
-              <a className="sm-link" href="#">
-                <img src={linkedin} alt="linkedin" />
+              <a class="sm-link" href="#">
+                <img src="logo/social_linkedin.png" alt="linkedin" />
               </a>
-              <a className="sm-link" href="#">
-                <img src={twitter} alt="twitter" />
+              <a class="sm-link" href="#">
+                <img src="logo/twiitter x.jpeg" alt="twitter" />
               </a>
             </div>
           </div>
         </section>
       </section>
-      <div className="copy">
+      <div class="copy flex flex-col justify-center items-center">
         <p>&copy; Copyright Bayzel Integrated Services @2025</p>
         <p>All Rights Reserved</p>
       </div>
