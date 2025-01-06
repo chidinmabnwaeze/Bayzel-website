@@ -4,8 +4,9 @@ import slide1 from "../assets/images/muhammad-sosiawan-unsplash.jpg";
 import slide2 from "../assets/images/mario-heller-unsplash.jpg";
 import slide3 from "../assets/images/marta-ortigosa-unsplash (1).jpg";
 import { serviceCards } from "../data/service-card";
-import secondimg from "../assets/images/erwan-hesry-1q75BReKpms-unsplash.jpg"
+import secondimg from "../assets/images/erwan-hesry-1q75BReKpms-unsplash.jpg";
 import { works } from "../data/work";
+import { projectCards } from "../data/project-cards";
 
 const Home = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -15,7 +16,7 @@ const Home = () => {
       setSlideIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 6000); // Change every 3 seconds
+    }, 6000); // Change every 6 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -76,8 +77,8 @@ const Home = () => {
     <main>
       <Header />
       <section className="body">
-        <section className="slider-section max-h-full">
-          <div className="slider overflow-hidden w-full">
+        <section className="slider-section">
+          <div className="slider overflow-hidden w-full relative">
             {slides.map((slide, index) => (
               <div
                 className={slideIndex === index ? "slides" : "slideHidden"}
@@ -116,12 +117,19 @@ const Home = () => {
               &#10095;
             </button>
             {/* slide indicator */}
-            {slides.map(( index)=>(
-              <button className="absolute flex items-center justify-center bottom-2 " key={index}>
+            {slides.map((_, index) => (
+              <button
+                className={
+                  slideIndex === index
+                    ? " slideActive absolute text-white m-auto flex items-center justify-center bottom-2 "
+                    : "slideInactive bg-gray-400"
+                }
+                onClick={() => setSlideIndex(index)}
+                key={index}
+              >
                 &bull;
               </button>
-            ))
-            }
+            ))}
           </div>
         </section>
 
@@ -150,22 +158,23 @@ const Home = () => {
         </section>
 
         {/* 3rd section */}
-        <section className="about-info flex bg-blue-700 p-8 w-full">
-          <div>
-            <img
-              className="secondimg w-4/5 object-cover rounded-2xl"
-              src={secondimg}
-              alt="image"
-            />
-          </div>
-          <div className="why-us text-white w-full">
+        <section className="about-info mt-20 flex p-8 ">
+          <img
+            className="secondimg w-3/5 object-cover rounded-2xl "
+            src={secondimg}
+            alt="image"
+          />
+
+          <div className="why-us w-full ml-12">
             <div className="title-head">
-              <h2 className="font-semibold text-3xl text-slate-300 mb-3">
+              <h2 className="font-semibold text-3xl text-blue-700 mb-3">
                 Why Us?
               </h2>
               <p className="text-2xl">
-                We've consulted for <span className="text-2xl">International Organizations</span> and
-                supervised over <span className="text-2xl">300 farmers </span>in Nigeria
+                We've consulted for{" "}
+                <span className="text-2xl">International Organizations</span>{" "}
+                and supervised over{" "}
+                <span className="text-2xl">300 farmers </span>in Nigeria
               </p>
             </div>
             <span className="summary-text mb-7 text-sm">
@@ -175,52 +184,51 @@ const Home = () => {
               harum sed consequuntur maiores expedita? Minus?
             </span>
 
-            {/* 4th section */}
             <div className="ourProjects mt-6">
-              {works.map((work, index)=>(
-                
-              <div className="project flex items-center justify-center mb-5" key={index}>
-                <img src={work.img1} alt="" />
-                <div className="project-info ml-3">
-                  <h3 className="text-xl">{work.title}</h3>
-                  <p>
-                   {work.text}
-                  </p>
+              {works.map((work, index) => (
+                <div
+                  className="project flex items-center justify-center mb-5"
+                  key={index}
+                >
+                  <img className="work-img" src={work.img} alt="" />
+                  <div className="project-info ml-3">
+                    <h3 className="text-xl font-semibold text-blue-700">
+                      {work.title}
+                    </h3>
+                    <p>{work.text}</p>
+                  </div>
                 </div>
-              </div>
               ))}
-              {/* <div className="project">
-                <img src="icons/healthicons_agriculture-worker.svg" alt="" />
-                <div className="project-info">
-                  <h3 className="text-xl">Gems4</h3>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Magnam quas ducimus animi tempora iusto! Officia{" "}
-                  </p>
-                </div>
-              </div>
-              <div className="project">
-                <img
-                  src="icons/material-symbols-light_agriculture-outline-sharp.svg"
-                  alt=""
-                />
-                <div className="project-info">
-                  <h3 className="text-xl">Gems4</h3>
-                  <p>
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                    Magnam quas ducimus animi tempora iusto! Officia{" "}
-                  </p>
-                </div>
-              </div> */}
             </div>
           </div>
         </section>
-        <section class="our-work m-3 flex justify-center flex-col relative">
-          <div class="work-title">
+
+        {/* 4th section */}
+        <section class="our-work mt-20 flex justify-center items-center flex-col relative ">
+          <div class="work-title mt-6 mb-4">
             <h1 class="text-3xl font-semibold text-blue-700 mt-6">
               Our Projects
             </h1>
           </div>
+          {/* Each slide  */}
+          <section class="project-slider flex p-20 bg-black">
+            {projectCards.map((project, index) => (
+              <div
+                class="project-slides relative w-2/5 max m-auto m-2 p-2 rounded-xl flex flex-col justify-between"
+                key={index}
+              >
+                <img
+                  class="project-img h-full w-full object-cover"
+                  src={project.img}
+                  alt="project-image"
+                />
+                <div class="subject py-3 hidden z-10 absolute bottom-5 m-5">
+                  <h3 class="text-2xl text-white">{project.heading}</h3>
+                  <p className="text-white">{project.subtext}</p>
+                </div>
+              </div>
+            ))}
+          </section>
           {/* slide indicator arrow  */}
           <div class="slide-indicator flex justify-between">
             <a href="">
@@ -238,43 +246,8 @@ const Home = () => {
               />
             </a>
           </div>
-          {/* Each slide  */}
-          <section class="project-slider flex">
-            <div class="project-slides w-500 m-2 bg-white p-2 rounded-xl relative">
-              <img
-                class="project-img"
-                src="images/arjun-mj-792-GkRUtes-unsplash.jpg"
-                alt=""
-              />
-              <div class="subject">
-                <h3 class="text-2xl">PROJECT IN TARABA</h3>
-                <p>Executed this Project</p>
-              </div>
-            </div>
-            <div class="project-slides">
-              <img
-                class="project-img"
-                src="images/arjun-mj-792-GkRUtes-unsplash.jpg"
-                alt=""
-              />
-              <div class="subject">
-                <h3>PROJECT IN TARABA</h3>
-                <p>Executed this Project</p>
-              </div>
-            </div>
-            <div class="project-slides">
-              <img
-                class="project-img"
-                src="images/arjun-mj-792-GkRUtes-unsplash.jpg"
-                alt=""
-              />
-              <div class="subject">
-                <h3>PROJECT IN TARABA</h3>
-                <p>Executed this Project</p>
-              </div>
-            </div>
-          </section>
         </section>
+
         <section class="testimonal-section flex flex-col ">
           <div class="testimonal-heading">
             <h1 class="text-3xl font-semibold text-blue-700 mt-6">
@@ -341,16 +314,16 @@ const Home = () => {
                 <h3>Useful Links</h3>
                 <ul>
                   <li>
-                    <a href="">Home</a>
+                    <a href="/home">Home</a>
                   </li>
                   <li>
-                    <a href="">About</a>
+                    <a href="/about">About</a>
                   </li>
                   <li>
-                    <a href="">Services</a>
+                    <a href="/services">Services</a>
                   </li>
                   <li>
-                    <a href="">Terms</a>
+                    <a href="/terms">Terms</a>
                   </li>
                 </ul>
               </div>

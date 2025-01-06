@@ -1,7 +1,9 @@
-import React from "react";
+import React from 'react'
 
 const Slider = () => {
-  return <div>Slider</div>;
-};
+  return (
+    <div>Slider</div>
+  )
+}
 
-export default Slider;
+export default Slider
