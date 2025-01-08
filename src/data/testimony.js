@@ -1,5 +1,5 @@
 import img1 from "../assets/images/aiony-haust-3TLl_97HNJo-unsplash.jpg";
-import img2 from "../assets/images/henry-perks 1 unsplash.jpg";
+import img2 from "../assets/images/roland-cousins-3GTHyh2lo9o-unsplash.jpg";
 
 export const testimonals = [
   {

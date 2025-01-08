@@ -17,32 +17,32 @@ const Header = () => {
         <div className="nav-menu">
           <ul className="nav-lists flex">
             <li className="nav-list">
-              <a className="nav-link" href="#home">
+              <a className="nav-link" href="/home">
                 Home
               </a>
             </li>
             <li className="nav-list">
-              <a className="nav-link" href="#about">
+              <a className="nav-link" href="/about">
                 About Us
               </a>
             </li>
             <li className="nav-list">
-              <a className="nav-link" href="#services">
+              <a className="nav-link" href="/services">
                 Our Services
               </a>
             </li>
             <li className="nav-list">
-              <a className="nav-link" href="#testimonals">
+              <a className="nav-link" href="/testimonals">
                 Testimonals
               </a>
             </li>
             <li className="nav-list">
-              <a className="nav-link" href="#blog">
+              <a className="nav-link" href="/blog">
                 Blog
               </a>
             </li>
             <li className="nav-list">
-              <a className="nav-link" href="#contact">
+              <a className="nav-link" href="/contact">
                 Contact Us
               </a>
             </li>

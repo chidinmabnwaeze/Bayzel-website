@@ -1,18 +1,14 @@
 import React from "react";
-import facebook from "../assets/logo/facebook-logo-facebook-icon-transparent-free-png.webp";
-import insta from "../assets/logo/instagram-filled.png";
-import linkedin from "../assets/logo/social_linkedin.png";
-import twitter from "../assets/logo/twiitter x.jpeg";
 
 const Footer = () => {
   return (
     <footer className="bg-blue-700 px-4 py-12 text-white">
-      <section class="footer-info flex justify-around items-center">
-        <section class="left">
-          <section class="one">
-            <h1>Bayzel Integrated Services</h1>
+      <section className="footer-info flex justify-around items-center">
+        <section className="left ">
+          <section className="one">
+            <h1 className="text-lg">Bayzel Integrated Services</h1>
             <address>Bama road, Kubwa,Abuja</address>
-            <div class="contact-details">
+            <div className="contact-details">
               <p>
                 <span>Phone:</span>08022409706
               </p>
@@ -22,15 +18,15 @@ const Footer = () => {
             </div>
           </section>
         </section>
-        <section class="right grid grid-cols-3 gap-2">
+        <section className="right grid grid-cols-3 gap-2">
           <div>
-            <h3>Useful Links</h3>
+            <h3 className="text-xl">Useful Links</h3>
             <ul>
               <li>
                 <a href="/home">Home</a>
               </li>
               <li>
-                <a href="/about">About</a>
+                <a href="/about">About Us</a>
               </li>
               <li>
                 <a href="/services">Services</a>
@@ -41,7 +37,7 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h3>Our Services</h3>
+            <h3 className="text-xl">Our Services</h3>
             <ul>
               <li>
                 <a href="">Consulting</a>
@@ -58,26 +54,29 @@ const Footer = () => {
             </ul>
           </div>
           <div>
-            <h5>Follow Us</h5>
+            <h3 className="text-xl">Follow Us</h3>
             <p>Follow us on all our socials</p>
-            <div class="social-links">
-              <a class="sm-link" href="#">
-                <img src={facebook} alt="facebook" />
+            <div className="social-links flex">
+              <a className="sm-link m-1" href="#">
+                <i class="bx bxl-facebook text-2xl"></i>
               </a>
-              <a class="sm-link" href="#">
-                <img src="logo/instagram-filled.png" alt="insta" />
+              <a className="sm-link m-1" href="#">
+                <i class="bx bxl-instagram text-2xl"></i>
               </a>
-              <a class="sm-link" href="#">
-                <img src="logo/social_linkedin.png" alt="linkedin" />
+              <a className="sm-link m-1" href="#">
+                <i class="bx bxl-linkedin text-2xl"></i>
               </a>
-              <a class="sm-link" href="#">
-                <img src="logo/twiitter x.jpeg" alt="twitter" />
+              <a className="sm-link m-1" href="#">
+                <i class="fa-brands fa-x-twitter text-2xl"></i>
+              </a>
+              <a className="sm-link m-1" href="#">
+                <i class="bx bxl-github text-2xl"></i>
               </a>
             </div>
           </div>
         </section>
       </section>
-      <div class="copy flex flex-col justify-center items-center">
+      <div class="copy flex flex-col justify-center items-center mt-10">
         <p>&copy; Copyright Bayzel Integrated Services @2025</p>
         <p>All Rights Reserved</p>
       </div>

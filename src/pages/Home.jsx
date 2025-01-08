@@ -3,11 +3,13 @@ import Header from "../components/Header";
 import slide1 from "../assets/images/muhammad-sosiawan-unsplash.jpg";
 import slide2 from "../assets/images/mario-heller-unsplash.jpg";
 import slide3 from "../assets/images/marta-ortigosa-unsplash (1).jpg";
+import slide4 from "../assets/images/meric-tuna-unsplash.jpg";
 import { serviceCards } from "../data/service-card";
 import secondimg from "../assets/images/erwan-hesry-1q75BReKpms-unsplash.jpg";
 import { works } from "../data/work";
 import { projectCards } from "../data/project-cards";
 import Testimonals from "../components/Testimonals";
+import Footer from "../components/Footer";
 
 const Home = () => {
   const [slideIndex, setSlideIndex] = useState(0);
@@ -73,6 +75,19 @@ const Home = () => {
         </>
       ),
     },
+    {
+      img: slide4,
+      title: "Bayzel Integrated Services",
+      subText: (
+        <>
+          Bayzel Integrated Services Limited (Bayzel) offers services in
+          consultancy, field surveys
+          <br />
+          equipment and material supplies, business, and value-chain
+          development.
+        </>
+      ),
+    },
   ];
   return (
     <main>
@@ -92,7 +107,7 @@ const Home = () => {
                     alt="slide"
                   />
                 </div>
-                <div className="content absolute top-60 bottom-0 m-6">
+                <div className="content absolute top-64 bottom-0  ml-20">
                   <div className="heading-text mb-5">
                     <h1 className="title text-white text-5xl mb-3 font-semibold">
                       {slide.title}
@@ -117,14 +132,16 @@ const Home = () => {
             >
               &#10095;
             </button>
-            {/* slide indicator */}
+          </div>
+          {/* slide indicator */}
+          <div className="absolute bottom-3 left-0 right-0 flex justify-center items-center">
             {slides.map((_, index) => (
               <button
-                className={
+                className={`${
                   slideIndex === index
-                    ? " slideActive absolute text-white m-auto flex items-center justify-center bottom-2 "
-                    : "slideInactive bg-gray-400"
-                }
+                    ? " slideActive text-white"
+                    : "slideInactive text-gray-400"
+                }`}
                 onClick={() => setSlideIndex(index)}
                 key={index}
               >
@@ -251,85 +268,7 @@ const Home = () => {
         </section>
 
         <Testimonals />
-        <footer className="bg-blue-700 px-4 py-12 text-white">
-          <section class="footer-info flex justify-around items-center">
-            <section class="left">
-              <section class="one">
-                <h1>Bayzel Integrated Services</h1>
-                <address>Bama road, Kubwa,Abuja</address>
-                <div class="contact-details">
-                  <p>
-                    <span>Phone:</span>08022409706
-                  </p>
-                  <p>
-                    <span>Email:</span>bnwankpa@yahoo.co.uk
-                  </p>
-                </div>
-              </section>
-            </section>
-            <section class="right grid grid-cols-3 gap-2">
-              <div>
-                <h3>Useful Links</h3>
-                <ul>
-                  <li>
-                    <a href="/home">Home</a>
-                  </li>
-                  <li>
-                    <a href="/about">About</a>
-                  </li>
-                  <li>
-                    <a href="/services">Services</a>
-                  </li>
-                  <li>
-                    <a href="/terms">Terms</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3>Our Services</h3>
-                <ul>
-                  <li>
-                    <a href="">Consulting</a>
-                  </li>
-                  <li>
-                    <a href="">Agribusiness</a>
-                  </li>
-                  <li>
-                    <a href="">Marketing</a>
-                  </li>
-                  <li>
-                    <a href="">Terms</a>
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h5>Follow Us</h5>
-                <p>Follow us on all our socials</p>
-                <div class="social-links">
-                  <a class="sm-link" href="#">
-                    <img
-                      src="/logo/facebook-logo-facebook-icon-transparent-free-png.webp"
-                      alt="facebook"
-                    />
-                  </a>
-                  <a class="sm-link" href="#">
-                    <img src="logo/instagram-filled.png" alt="insta" />
-                  </a>
-                  <a class="sm-link" href="#">
-                    <img src="logo/social_linkedin.png" alt="linkedin" />
-                  </a>
-                  <a class="sm-link" href="#">
-                    <img src="logo/twiitter x.jpeg" alt="twitter" />
-                  </a>
-                </div>
-              </div>
-            </section>
-          </section>
-          <div class="copy flex flex-col justify-center items-center">
-            <p>&copy; Copyright Bayzel Integrated Services @2025</p>
-            <p>All Rights Reserved</p>
-          </div>
-        </footer>
+        <Footer />
       </section>
     </main>
   );
