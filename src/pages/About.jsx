@@ -15,9 +15,16 @@ const About = () => {
           </p>
         </div>
       </section>
-      <section className="flex justify-center mt-10 place-items-center">
-        <div className="about-text">
-          <h1>Who We Are</h1>
+      <section className="flex justify-center  m-24">
+        <div className="about-text mr-40">
+          <div className="heading flex items-center">
+            <h1 className="text-3xl font-semibold text-blue-700 my-4">
+              Who We Are
+            </h1>
+            <span className="flex w-24 h-1 bg-blue-700 ml-6 rounded-full">
+              .
+            </span>
+          </div>
           <article>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores
             quos voluptate repellat dolores harum reiciendis iusto sapiente hic
@@ -27,15 +34,43 @@ const About = () => {
             illum non eius quas voluptas ipsum aliquam officia iusto error. Illo
             deserunt et maxime quidem dignissimos.
           </article>
+          <article className="next-prgh m-10 flex">
+            <span className=" w-1 h-24 bg-blue-700 mx-6 rounded-full flex flex-col">
+              .
+            </span>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Officia
+            fugit deleniti vel alias tempora ad corrupti deserunt qui aperiam
+            provident totam ea suscipit, officiis atque quibusdam blanditiis
+            odio nisi reiciendis? Lorem, ipsum dolor sit amet consectetur
+            adipisicing elit. Officia fugit deleniti vel alias tempora ad
+            corrupti deserunt qui aperiam provident totam ea suscipit, officiis
+            atque quibusdam blanditiis odio nisi reiciendis?
+          </article>
+
+          <section className="figures flex justify-center items-center mt-20">
+            <div className="mr-10 text-center">
+              <h1 className="text-2xl font-semibold text-blue-700">5+</h1>
+              <p className="text-gray-500">Years Experience</p>
+            </div>
+            <div className="mr-10 text-center">
+              <h1 className="text-2xl font-semibold text-blue-700">20+</h1>
+              <p className="text-gray-500">Projects</p>
+            </div>
+            <div className="text-center">
+              <h1 className="text-2xl font-semibold text-blue-700">6+</h1>
+              <p className="text-gray-500">Organizations</p>
+            </div>
+          </section>
+
+          {/* <div className="buttons">
+            <button className="m-5 bg-blue-700 p-3 px-4 rounded-lg text-white font-semibold">
+              Learn More
+            </button>
+            <button>Contact Us</button>
+          </div> */}
         </div>
-        <div className="side-img relative">
-          <div className="mergedImg1 m-5 bg-red-700 border-red-800">
-            <img className="img12" src={image} alt="" />
-          </div>
-          <div className="mergedImg2 absolute right-0 left- bottom-32 ">
-            <img className="img2" src={image} alt="" />
-          </div>
-        </div>
+
+        <img className="img12 w-2/5" src={image} alt="" />
       </section>
       <Footer />
     </main>

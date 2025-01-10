@@ -9,6 +9,9 @@ a {
   font-weight: 600;
 }
 a:hover {
+  transition: all 0.8s ease-in-out;
+}
+header a:hover {
   color: #1d4ed8;
 }
 .nav-list {
@@ -104,16 +107,17 @@ a:hover {
   object-fit: cover;
 }
 .mergedImg1 {
-  width: 500px;
+  width: 350px;
   height: 20%;
   object-fit: cover;
   margin: 20px;
 }
 .mergedImg2 {
-  width: 500px;
+  width: 350px;
   height: 20%;
   object-fit: cover;
 }
+
 /* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

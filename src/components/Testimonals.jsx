@@ -70,7 +70,7 @@ const Testimonals = () => {
               <button
                 className={
                   currentIndex === btnIndex
-                    ? "scroll-indicator shadow-md"
+                    ? "scroll-indicator text-blue-700 shadow-md"
                     : "indicator-inactive"
                 }
                 key={btnIndex}

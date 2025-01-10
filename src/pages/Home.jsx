@@ -35,6 +35,8 @@ const Home = () => {
     );
   };
 
+  const [scrollbody, setScrollbody] = useState("show");
+
   const slides = [
     {
       img: slide1,
@@ -249,20 +251,22 @@ const Home = () => {
             ))}
           </section>
           {/* slide indicator arrow  */}
-          <div class="slide-indicator flex justify-between">
-            <a href="">
-              <img
-                class="left-arrow absolute top-2/4 bottom-0 left-0"
-                src="icons/material-symbols-light_arrow-back-ios.svg"
-                alt="left-arrow"
-              />
-            </a>
-            <a href="">
-              <img
-                class="right-arrow absolute top-2/4 bottom-0 right-0"
-                src="icons/material-symbols-light_arrow-back-ios-1.svg"
-                alt="right=arrow"
-              />
+          <div class="slide-indicator ">
+            <span className="h-1">
+              <a
+                className="bg-white m-4 p-2 rounded-full absolute top-2/4 left-0"
+                href=""
+                onClick={(e) => e.preventDefault(e)}
+              >
+                &#x1F860;
+              </a>
+            </span>
+            <a
+              className="bg-white m-4 p-2 rounded-full absolute top-2/4 right-0"
+              href=""
+              onClick={(e) => e.preventDefault(e)}
+            >
+              &#x1F862;
             </a>
           </div>
         </section>
