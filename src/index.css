@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ANIMATIONS */
+.fade {
+  animation-name: fade;
+  animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slidesi {
+  0% {
+    transform: translateY(20%);
+  }
+  80% {
+    transform: translateY(0);
+  }
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(50%);
+    transition: all 1s ease-in-out;
+  }
+  to {
+    transform: translate(0);
+    transition: all 1s ease-in-out;
+  }
+}
+
 * {
   font-family: nunito;
 }
@@ -27,17 +60,21 @@ header a:hover {
 }
 .slider {
   height: 100vh; /* 100 percent viewport height */
-  transition: all 1s ease-out;
 }
-.slider-img {
-  transform: translate();
-  transition: all 1s ease-out;
+.slides {
+  transform: translateX();
+
+  transition: transform 1s ease-in-out;
 }
+/* .slider-img {
+  transition: all 1s ease-out;
+} */
 .service-card {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 10px 32px 0px;
 }
 .service-card:hover {
   background-color: #1d4ed8;
+  color: white;
   transform: translateY();
   transition: background-color 0.7s ease-in;
 }
@@ -100,6 +137,13 @@ header a:hover {
 .CTA:hover {
   opacity: 0.5;
   transition: all 0.8ms ease-out;
+}
+.learn-more {
+  width: 150px;
+  transition: width 0.8s ease-in-out;
+}
+.learn-more:hover {
+  width: 40%;
 }
 .about-img {
   height: 400px;

@@ -19,7 +19,7 @@ const Home = () => {
       setSlideIndex((prevIndex) =>
         prevIndex === slides.length - 1 ? 0 : prevIndex + 1
       );
-    }, 6000); // Change every 6 seconds
+    }, 5000); // Change every 5 seconds
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -99,7 +99,7 @@ const Home = () => {
           <div className="slider overflow-hidden w-full relative">
             {slides.map((slide, index) => (
               <div
-                className={slideIndex === index ? "slides" : "slideHidden"}
+                className={slideIndex === index ? "slides fade" : "slideHidden"}
                 key={index}
               >
                 <div className="overlay bg-black opacity-100">
@@ -109,7 +109,7 @@ const Home = () => {
                     alt="slide"
                   />
                 </div>
-                <div className="content absolute top-64 bottom-0  ml-20">
+                <div className="content absolute top-64 bottom-0 ml-20 slideIn">
                   <div className="heading-text mb-5">
                     <h1 className="title text-white text-5xl mb-3 font-semibold">
                       {slide.title}
